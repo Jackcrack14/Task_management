@@ -1,34 +1,28 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [tasks, setTask] = useState([])
+
+  const addData = () =>{
+    setTask()
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='app-cont'>
+      <div className='form-cont'>
+      <form onSubmit={addData}>
+      <input type='text' placeholder='Title'></input>
+      <input type='text' placeholder='Description'></input>
+      <select name="cars" id="cars">     
+        <option value="To Do">To Do</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Done">Done</option>
+      </select>
+      <button>Add</button>
+      </form>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
