@@ -49,7 +49,6 @@ form .form-row .input-data{
   form .form-row{
     height: 70px;
   }
-
   .input-data label{
     position: absolute;
     pointer-events: none;
